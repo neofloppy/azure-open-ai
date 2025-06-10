@@ -12,7 +12,7 @@ from .const import (
     CONF_PERSONALITY,
     CONF_MOOD,
 )
-from .azure_ai import AzureAIClient
+from .nova import AzureAIClient
 from .personality import PersonalityManager
 from .memory import MemoryManager
 from .random_events import RandomEventManager

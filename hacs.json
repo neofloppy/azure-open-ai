@@ -1,10 +1,10 @@
 {
-  "name": "Azure AI Assistant",
+  "name": "Nova AI Assistant",
   "content_in_root": false,
-  "domains": ["azure_ai"],
+  "domains": ["nova"],
   "country": "ZA",
   "homeassistant": "2023.0.0",
   "render_readme": true,
   "iot_class": "cloud_polling",
-  "filename": "custom_components/azure_ai/manifest.json"
+  "filename": "custom_components/nova/manifest.json"
 }

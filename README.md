@@ -23,7 +23,7 @@ A powerful, customizable Home Assistant addon that brings Azure AI to your smart
 4. Restart Home Assistant.
 
 ### Manual
-1. Copy the `custom_components/azure_ai` directory into your Home Assistant `custom_components` folder.
+1. Copy the `custom_components/nova` directory into your Home Assistant `custom_components` folder.
 2. Restart Home Assistant.
 3. Add the integration via the Home Assistant UI (Configuration > Integrations > Add Integration > Azure AI Assistant).
 
@@ -41,32 +41,32 @@ You can change personality and mood later using services.
 
 The following services are available:
 
-### `azure_ai.ask_question`
-Ask the assistant a question. The answer is fired as an event (`azure_ai_response`).
+### `nova.ask_question`
+Ask the assistant a question. The answer is fired as an event (`nova_response`).
 
 **Fields:**
 - `question` (string): The question to ask.
 
 **Example:**
 ```yaml
-service: azure_ai.ask_question
+service: nova.ask_question
 data:
   question: "What's the weather like today?"
 ```
 
-### `azure_ai.set_mood`
+### `nova.set_mood`
 Set the assistant's mood.
 
 **Fields:**
 - `mood` (string): One of `neutral`, `happy`, `sad`, `excited`, `angry`, `curious`, `bored`.
 
-### `azure_ai.set_personality`
+### `nova.set_personality`
 Set the assistant's personality.
 
 **Fields:**
 - `personality` (string): One of `friendly`, `professional`, `humorous`, `empathetic`.
 
-### `azure_ai.clear_memory`
+### `nova.clear_memory`
 Clear the assistant's memory.
 
 ## How It Works

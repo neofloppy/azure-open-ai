@@ -1,0 +1,11 @@
+{
+  "domain": "nova",
+  "name": "Nova AI Assistant",
+  "version": "0.1.0",
+  "documentation": "https://github.com/neofloppy/nova",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@neofloppy"],
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}

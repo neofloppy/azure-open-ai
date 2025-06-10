@@ -1,6 +1,6 @@
 """Constants for Azure AI Assistant integration."""
 
-DOMAIN = "azure_ai"
+DOMAIN = "nova"
 CONF_API_KEY = "api_key"
 CONF_ENDPOINT = "endpoint"
 CONF_PERSONALITY = "personality"
