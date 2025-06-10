@@ -1,0 +1,10 @@
+{
+  "name": "Azure AI Assistant",
+  "content_in_root": false,
+  "domains": ["azure_ai"],
+  "country": "ZA",
+  "homeassistant": "2023.0.0",
+  "render_readme": true,
+  "iot_class": "cloud_polling",
+  "filename": "custom_components/azure_ai/manifest.json"
+}
