@@ -1,6 +1,7 @@
-"""Memory management for Azure AI Assistant."""
+"""Memory management for Nova AI Assistant."""
 
 import logging
+from homeassistant.helpers.storage import Store
 
 from .const import DEFAULT_MEMORY_SIZE, DOMAIN
 
@@ -14,7 +15,7 @@ class MemoryManager:
 
     async def load(self):
         """Load memories from Home Assistant storage."""
-        store = self.hass.helpers.storage.Store(1, f"{DOMAIN}_memory")
+        store = Store(self.hass, 1, f"{DOMAIN}_memory")
         data = await store.async_load()
         if data and "memories" in data:
             self.memories = data["memories"]
@@ -23,7 +24,7 @@ class MemoryManager:
 
     async def save(self):
         """Save memories to Home Assistant storage."""
-        store = self.hass.helpers.storage.Store(1, f"{DOMAIN}_memory")
+        store = Store(self.hass, 1, f"{DOMAIN}_memory")
         await store.async_save({"memories": self.memories})
 
     def add_memory(self, memory: str):
