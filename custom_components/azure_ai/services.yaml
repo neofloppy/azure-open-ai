@@ -1,0 +1,23 @@
+ask_question:
+  description: "Ask the Azure AI Assistant a question."
+  fields:
+    question:
+      description: "The question to ask."
+      example: "What's the weather like today?"
+
+set_mood:
+  description: "Set the assistant's mood."
+  fields:
+    mood:
+      description: "Mood to set (neutral, happy, sad, excited, angry, curious, bored)."
+      example: "happy"
+
+set_personality:
+  description: "Set the assistant's personality."
+  fields:
+    personality:
+      description: "Personality to set (friendly, professional, humorous, empathetic)."
+      example: "humorous"
+
+clear_memory:
+  description: "Clear the assistant's memory."
