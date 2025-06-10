@@ -1,5 +1,7 @@
 # Azure AI Assistant for Home Assistant
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz/)
+
 A powerful, customizable Home Assistant addon that brings Azure AI to your smart home. Supports personality customization, moods, random events, and persistent memory.
 
 ## Features
@@ -10,9 +12,17 @@ A powerful, customizable Home Assistant addon that brings Azure AI to your smart
 - **Random Events**: The assistant can trigger random behaviors (jokes, facts, mood changes, etc.).
 - **Memory**: Remembers previous interactions and facts for context-aware conversations.
 - **Home Assistant Services**: Interact with the assistant via Home Assistant services.
+- **HACS Compatible**: Easily install and update via [HACS](https://hacs.xyz/).
 
 ## Installation
 
+### HACS (Recommended)
+1. In Home Assistant, go to HACS > Integrations > Custom repositories.
+2. Add this repository URL: `https://github.com/neofloppy/azure-open-ai` as a custom integration.
+3. Search for "Azure AI Assistant" in HACS and install.
+4. Restart Home Assistant.
+
+### Manual
 1. Copy the `custom_components/azure_ai` directory into your Home Assistant `custom_components` folder.
 2. Restart Home Assistant.
 3. Add the integration via the Home Assistant UI (Configuration > Integrations > Add Integration > Azure AI Assistant).
@@ -76,5 +86,5 @@ Pull requests and feature suggestions are welcome!
 
 ---
 
-**Author:** Your Name  
+**Author:** neofloppy (Lourens Graaff)  
 **License:** MIT
