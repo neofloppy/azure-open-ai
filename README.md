@@ -86,5 +86,5 @@ Pull requests and feature suggestions are welcome!
 
 ---
 
-**Author:** neofloppy (Lourens Graaff)  
+**Author:** neofloppy
 **License:** MIT
