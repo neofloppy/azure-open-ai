@@ -1,5 +1,5 @@
 ask_question:
-  description: "Ask the Azure AI Assistant a question."
+  description: "Ask the Nova Personal Assistant a question."
   fields:
     question:
       description: "The question to ask."

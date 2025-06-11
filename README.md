@@ -1,12 +1,12 @@
-# Azure AI Assistant for Home Assistant
+# Nova Personal Assistant for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz/)
 
-A powerful, customizable Home Assistant addon that brings Azure AI to your smart home. Supports personality customization, moods, random events, and persistent memory.
+A powerful, customizable Home Assistant addon that brings Nova Personal Assistant to your smart home. Supports personality customization, moods, random events, and persistent memory.
 
 ## Features
 
-- **Azure AI API Integration**: Connects to Azure OpenAI for advanced conversational AI.
+- **Nova AI Integration**: Connects to your Nova Personal Assistant for advanced conversational AI.
 - **Customizable Personality**: Choose from friendly, professional, humorous, or empathetic.
 - **Mood System**: Moods affect responses and can change randomly or via service calls.
 - **Random Events**: The assistant can trigger random behaviors (jokes, facts, mood changes, etc.).
@@ -18,20 +18,20 @@ A powerful, customizable Home Assistant addon that brings Azure AI to your smart
 
 ### HACS (Recommended)
 1. In Home Assistant, go to HACS > Integrations > Custom repositories.
-2. Add this repository URL: `https://github.com/neofloppy/azure-open-ai` as a custom integration.
-3. Search for "Azure AI Assistant" in HACS and install.
+2. Add this repository URL: `https://github.com/neofloppy/nova` as a custom integration.
+3. Search for "Nova Personal Assistant" in HACS and install.
 4. Restart Home Assistant.
 
 ### Manual
 1. Copy the `custom_components/nova` directory into your Home Assistant `custom_components` folder.
 2. Restart Home Assistant.
-3. Add the integration via the Home Assistant UI (Configuration > Integrations > Add Integration > Azure AI Assistant).
+3. Add the integration via the Home Assistant UI (Configuration > Integrations > Add Integration > Nova Personal Assistant).
 
 ## Configuration
 
 During setup, you will be prompted for:
-- **Azure API Key**: Your Azure OpenAI API key.
-- **API Endpoint**: The endpoint for your Azure OpenAI deployment.
+- **API Key**: Your Nova Personal Assistant API key.
+- **API Endpoint**: The endpoint for your Nova Personal Assistant deployment.
 - **Personality**: (Optional) Initial personality (`friendly`, `professional`, `humorous`, `empathetic`).
 - **Mood**: (Optional) Initial mood (`neutral`, `happy`, `sad`, `excited`, `angry`, `curious`, `bored`).
 

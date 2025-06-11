@@ -1,4 +1,4 @@
-"""Personality and mood logic for Azure AI Assistant."""
+"""Personality and mood logic for Nova Personal Assistant."""
 
 import random
 

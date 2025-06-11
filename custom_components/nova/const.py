@@ -1,4 +1,4 @@
-"""Constants for Azure AI Assistant integration."""
+"""Constants for Nova Personal Assistant integration."""
 
 DOMAIN = "nova"
 CONF_API_KEY = "api_key"

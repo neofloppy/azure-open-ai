@@ -1,4 +1,4 @@
-"""Random events logic for Azure AI Assistant."""
+"""Random events logic for Nova Personal Assistant."""
 
 import asyncio
 import random

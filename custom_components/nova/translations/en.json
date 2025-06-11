@@ -1,10 +1,10 @@
 {
-  "title": "Azure AI Assistant",
+  "title": "Nova Personal Assistant",
   "config": {
     "step": {
       "user": {
-        "title": "Configure Azure AI Assistant",
-        "description": "Connect your Azure AI API and customize your assistant.",
+        "title": "Configure Nova Personal Assistant",
+        "description": "Connect your Nova AI API and customize your assistant.",
         "data": {
           "api_key": "Azure API Key",
           "endpoint": "API Endpoint",
@@ -17,7 +17,7 @@
   "services": {
     "ask_question": {
       "name": "Ask Question",
-      "description": "Ask the Azure AI Assistant a question."
+      "description": "Ask the Nova Personal Assistant a question."
     },
     "set_mood": {
       "name": "Set Mood",
