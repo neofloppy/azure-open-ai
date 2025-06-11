@@ -91,6 +91,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         memory_mgr.add_memory(f"Q: {question} A: {answer}")
         await memory_mgr.save()
         hass.bus.async_fire(f"{DOMAIN}_response", {"question": question, "answer": answer})
+        return None
 
     hass.services.async_register(DOMAIN, "ask_question", handle_ask_question)
 
