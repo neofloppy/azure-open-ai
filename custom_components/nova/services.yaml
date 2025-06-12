@@ -4,20 +4,43 @@ ask_question:
     question:
       description: "The question to ask."
       example: "What's the weather like today?"
+      required: true
+      selector:
+        text:
+          multiline: true
 
 set_mood:
   description: "Set the assistant's mood."
   fields:
     mood:
-      description: "Mood to set (neutral, happy, sad, excited, angry, curious, bored)."
+      description: "Mood to set."
       example: "happy"
+      required: true
+      selector:
+        select:
+          options:
+            - "neutral"
+            - "happy"
+            - "sad"
+            - "excited"
+            - "angry"
+            - "curious"
+            - "bored"
 
 set_personality:
   description: "Set the assistant's personality."
   fields:
     personality:
-      description: "Personality to set (friendly, professional, humorous, empathetic)."
+      description: "Personality to set."
       example: "humorous"
+      required: true
+      selector:
+        select:
+          options:
+            - "friendly"
+            - "professional"
+            - "humorous"
+            - "empathetic"
 
 clear_memory:
   description: "Clear the assistant's memory."
@@ -28,6 +51,14 @@ speak:
     text:
       description: "The text to synthesize and speak."
       example: "Hello, this is Nova speaking!"
+      required: true
+      selector:
+        text:
+          multiline: true
     media_player_entity_id:
       description: "The media_player entity to play the audio on (optional)."
       example: "media_player.living_room_speaker"
+      required: false
+      selector:
+        entity:
+          domain: media_player

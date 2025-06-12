@@ -6,12 +6,23 @@
         "title": "Configure Nova Personal Assistant",
         "description": "Connect your Nova AI API and customize your assistant.",
         "data": {
-          "api_key": "Azure API Key",
+          "api_key": "Nova AI API Key",
           "endpoint": "API Endpoint",
           "personality": "Personality",
-          "mood": "Mood"
+          "mood": "Mood",
+          "tts_api_key": "Azure TTS API Key (Optional)",
+          "tts_region": "Azure TTS Region (Optional)",
+          "tts_voice": "TTS Voice (Optional)"
         }
       }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the Nova AI API. Please check your API key and endpoint.",
+      "invalid_api_key": "API key cannot be empty.",
+      "invalid_endpoint": "Endpoint cannot be empty.",
+      "invalid_endpoint_format": "Endpoint must start with http:// or https://.",
+      "tts_region_required": "TTS region is required when TTS API key is provided.",
+      "tts_api_key_required": "TTS API key is required when TTS region is provided."
     }
   },
   "services": {
@@ -30,6 +41,10 @@
     "clear_memory": {
       "name": "Clear Memory",
       "description": "Clear the assistant's memory."
+    },
+    "speak": {
+      "name": "Speak",
+      "description": "Synthesize speech using Azure TTS and play it on a media player."
     }
   }
 }

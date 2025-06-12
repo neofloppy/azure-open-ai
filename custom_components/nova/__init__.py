@@ -16,7 +16,7 @@ from .const import (
     CONF_TTS_VOICE,
     DEFAULT_TTS_VOICE,
 )
-from .nova import AzureAIClient
+from .nova import NovaAIClient
 from .personality import PersonalityManager
 from .memory import MemoryManager
 from .random_events import RandomEventManager
@@ -48,8 +48,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     hass.data[DOMAIN][entry.entry_id] = {}
 
-    # Azure AI client
-    client = AzureAIClient(api_key, endpoint)
+    # Nova AI client
+    client = NovaAIClient(api_key, endpoint)
     hass.data[DOMAIN][entry.entry_id]["client"] = client
 
     # Personality manager
@@ -83,15 +83,27 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     # Register services
     async def handle_ask_question(call):
         question = call.data.get("question")
-        system_prompt = personality_mgr.get_system_prompt()
-        memories = memory_mgr.get_memories()
-        prompt = f"{system_prompt}\nMemory: {memories}\nUser: {question}"
-        async with aiohttp.ClientSession() as session:
-            answer = await client.ask(prompt, session)
-        memory_mgr.add_memory(f"Q: {question} A: {answer}")
-        await memory_mgr.save()
-        hass.bus.async_fire(f"{DOMAIN}_response", {"question": question, "answer": answer})
-        return None
+        if not question or not question.strip():
+            _LOGGER.error("No question provided to ask_question service")
+            return
+        
+        try:
+            system_prompt = personality_mgr.get_system_prompt()
+            memories = memory_mgr.get_memories(5)  # Only get recent 5 memories
+            memory_context = "\n".join(memories) if memories else "No previous context."
+            prompt = f"{system_prompt}\n\nPrevious context:\n{memory_context}\n\nUser: {question}"
+            
+            async with aiohttp.ClientSession() as session:
+                answer = await client.ask(prompt, session)
+            
+            if answer:
+                memory_mgr.add_memory(f"Q: {question} A: {answer}")
+                await memory_mgr.save()
+                hass.bus.async_fire(f"{DOMAIN}_response", {"question": question, "answer": answer})
+            else:
+                _LOGGER.error("No response received from Nova AI API")
+        except Exception as e:
+            _LOGGER.error("Error in ask_question service: %s", e)
 
     hass.services.async_register(DOMAIN, "ask_question", handle_ask_question)
 

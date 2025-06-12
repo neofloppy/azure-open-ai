@@ -19,4 +19,6 @@ DEFAULT_MEMORY_SIZE = 100  # Number of remembered events/statements
 DEFAULT_RANDOM_EVENT_INTERVAL = 3600  # seconds
 DEFAULT_TTS_VOICE = "en-US-JennyNeural"
 
-AZURE_API_TIMEOUT = 30  # seconds
+# API Configuration
+NOVA_API_TIMEOUT = 30  # seconds
+AZURE_API_TIMEOUT = 30  # seconds  # For backward compatibility

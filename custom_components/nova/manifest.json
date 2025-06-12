@@ -7,6 +7,6 @@
   "documentation": "https://github.com/neofloppy/nova",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "requirements": [],
+  "requirements": ["aiohttp>=3.8.0", "async_timeout>=4.0.0"],
   "version": "2025.01.0"
 }
